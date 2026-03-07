@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            bool cont = true;
             do
             {
                 Console.Write("Enter a string: ");
@@ -37,7 +38,9 @@
                 {
                     Console.WriteLine("String is a palindrome");
                 }
-            } while (true);
+                Console.Write("Enter 1 to continue inputting string, enter anything else to exit: ");
+                cont = Console.ReadLine() == "1" ? true : false ;
+            } while (cont);
         }
     }
 }
