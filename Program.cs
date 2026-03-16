@@ -20,7 +20,13 @@
                     Console.WriteLine("Empty string!");
                     continue;
                 }
+		else if (len == 1)
+		{
+		    Console.WriteLine("String is a palindrome!");
+		    continue;
+		}
                 bool isNotPalindrome = false;
+		int pairs = 0;
                 for (int i = 0; i < len / 2.0f; i++)
                 {
                     if (str[i] != str[len - 1 - i])
@@ -29,14 +35,15 @@
                         {
                             continue;
                         }
-                        Console.WriteLine("String is not palindrome!");
+                        Console.WriteLine("String is not a palindrome!");
                         isNotPalindrome = true;
                         break;
                     }
+		    pairs++;		
                 }
                 if (!isNotPalindrome)
                 {
-                    Console.WriteLine("String is a palindrome");
+                    Console.WriteLine("String is a palindrome with {0} pairs of symmetrical characters", pairs);
                 }
                 Console.Write("Enter 1 to continue inputting string, enter anything else to exit: ");
                 cont = Console.ReadLine() == "1" ? true : false ;
